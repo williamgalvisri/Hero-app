@@ -1,5 +1,31 @@
-<h1>Hero Layout</h1>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" [ngStyle]="{width: '250px'}">
+        <mat-toolbar class="flex justify-content-between">
+            <span>Menu</span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        <mat-nav-list>
+            <mat-list-item *ngFor="let item of sideBarItems" class="flex justify-content-center align-items-center" [routerLink]="item.path">
+                <mat-icon matListItemIcon>{{item.icon}}</mat-icon>{{item.label}}
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
 
-<router-outlet></router-outlet>
+    <mat-toolbar class="flex justify-content-between" color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <button mat-button>
+            Logout
+        </button>
+    </mat-toolbar>
 
-<h5>Footer</h5>
+    <div class="container p-4">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>
+
+
+
