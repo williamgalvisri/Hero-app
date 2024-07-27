@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HeroesService } from '../../services/heroes.service';
+import { Observable } from 'rxjs';
+import { Hero } from '../../interfaces/heroes.interface';
 
 @Component({
   selector: 'app-list-page',
@@ -6,6 +9,15 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class ListPageComponent {
+export class ListPageComponent implements OnInit {
 
+    heroes$: Observable<Hero[]> = this.hereosService.getHeroes();
+
+    constructor(private hereosService: HeroesService){
+
+    }
+
+    ngOnInit(): void {
+
+    }
 }
