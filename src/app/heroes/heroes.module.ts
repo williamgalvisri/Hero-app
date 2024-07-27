@@ -9,6 +9,8 @@ import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { MaterialModule } from '../material/material.module';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { HeroesHeroCardComponent } from './components/heroes-hero-card/heroes-hero-card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 
 @NgModule({
@@ -17,8 +19,11 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
     LayoutPageComponent,
     ListPageComponent,
     NewPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    HeroesHeroCardComponent,
+    HeroImagePipe,
   ],
+  providers: [HeroImagePipe],
   imports: [
     CommonModule,
     HeroesRoutingModule,

@@ -1,0 +1,17 @@
+.gradient-background {
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(20,20,32,0.6082808123249299) 63%, rgb(255 255 255 / 0%) 100%);
+    max-width: 500px;
+    min-height: 800px;
+}
+
+.gradient-background:hover {
+
+}
+
+.gradient-background__header{
+    color: white;
+}
+
+.gradient-background__subtitle{
+    color: white;
+}
