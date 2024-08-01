@@ -11,24 +11,26 @@ import { MaterialModule } from '../material/material.module';
 import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 import { HeroesHeroCardComponent } from './components/heroes-hero-card/heroes-hero-card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    HeroPageComponent,
-    LayoutPageComponent,
-    ListPageComponent,
-    NewPageComponent,
-    SearchPageComponent,
-    HeroesHeroCardComponent,
-    HeroImagePipe,
-  ],
-  providers: [HeroImagePipe],
-  imports: [
-    CommonModule,
-    HeroesRoutingModule,
-    MaterialModule,
-    HttpClientModule
-  ]
+    declarations: [
+        HeroPageComponent,
+        LayoutPageComponent,
+        ListPageComponent,
+        NewPageComponent,
+        SearchPageComponent,
+        HeroesHeroCardComponent,
+        HeroImagePipe,
+    ],
+    providers: [HeroImagePipe],
+    imports: [
+        CommonModule,
+        HeroesRoutingModule,
+        MaterialModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
 })
-export class HeroesModule { }
+export class HeroesModule {}

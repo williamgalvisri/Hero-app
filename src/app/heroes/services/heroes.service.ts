@@ -4,7 +4,7 @@ import { catchError, map, Observable, of } from 'rxjs';
 import { Hero } from '../interfaces/heroes.interface';
 import { evironments } from 'src/evironments/evironments';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class HeroesService {
     private baseUrl = evironments.baseUrl;
     constructor(private http: HttpClient) { }
@@ -19,5 +19,12 @@ export class HeroesService {
             .pipe(
                 catchError(error => of(undefined) )
             )
+    }
+
+    getSuggestions(query: string): Observable<Hero[]> {
+        return this.http.get<Hero[]>(`${this.baseUrl}/heroes?q=${query}`)
+        .pipe(
+            catchError(error => of([]) )
+        )
     }
 }

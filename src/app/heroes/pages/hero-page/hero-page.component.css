@@ -4,14 +4,8 @@
     min-height: 800px;
 }
 
-.gradient-background:hover {
-
+.card-content__text{
+    color: white !important;
 }
 
-.gradient-background__header{
-    color: white;
-}
 
-.gradient-background__subtitle{
-    color: white;
-}
