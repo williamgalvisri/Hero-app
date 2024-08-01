@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout-page',
@@ -12,4 +13,13 @@ export class LayoutPageComponent {
         { label: 'Añadir', icon: 'add', path: './new.hero'},
         { label: 'Buscar', icon: 'search', path: './search'}
     ]
+
+    constructor(private router: Router) {
+
+    }
+
+    logout() {
+        localStorage.removeItem('token')
+        this.router.navigate(['/auth/login'])
+    }
 }

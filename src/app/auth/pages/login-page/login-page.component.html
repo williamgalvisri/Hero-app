@@ -1,17 +1,17 @@
 
-<div class="flex flex-column">
+<div class="flex flex-column" [formGroup]="loginForm">
     <span class="text-lg mb-4">Login</span>
     <mat-form-field>
         <mat-label>Username</mat-label>
-        <input type="text" matInput placeholder="Type your username...">
+        <input type="text" matInput formControlName="email" placeholder="Type your username...">
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input type="password" matInput placeholder="Type your password...">
+        <input type="password" matInput formControlName="password" placeholder="Type your password...">
     </mat-form-field>
 
-    <button mat-button mat-flat-button color="primary">
+    <button mat-button mat-flat-button color="primary" [disabled]="isValid" (click)="onSubmit()">
         Login
     </button>
 
